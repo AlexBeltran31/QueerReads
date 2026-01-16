@@ -17,7 +17,6 @@ return new class extends Migration
             $table->foreignId('book_id')->constrained()->cascadeOnDelete();
             $table->enum('status', ['to_read', 'reading', 'finished'])->default('to_read');
             $table->unsignedTinyInteger('rating')->nullable;
-            $table->check('rating >= 1 AND rating <=5');
             $table->text('review')->nullable();
             $table->timestamps();
 
