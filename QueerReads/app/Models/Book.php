@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Book extends Model
+{
+    protected $fillable = ['title', 'author', 'description', 'publication_year', 'category_id'];
+
+    public function category() {
+        return $this->belongsTo(Category::class, 'category_book');
+    }
+
+    public function users() {
+        return $this->belongsToMany(User::class, 'user_books')
+                    ->withPivot('status', 'rating', 'review')
+                    ->withTimestamps();
+    }
+}
