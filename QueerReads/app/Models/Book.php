@@ -9,7 +9,7 @@ class Book extends Model
     protected $fillable = ['title', 'author', 'description', 'publication_year', 'category_id'];
 
     public function category() {
-        return $this->belongsTo(Category::class, 'category_book');
+        return $this->belongsTo(Category::class);
     }
 
     public function users() {
