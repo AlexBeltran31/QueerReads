@@ -7,6 +7,10 @@
                 {{ $book->title }}
             </a>
         </h3>
-        <p>{{ $book->author }} - {{ $book->category->name }}</p>
+        <p>{{ $book->author }} - 
+            <a href="{{ route('categories.show', $book->category) }}">
+                {{ $book->category->name }}
+            </a>
+        </p>
     </div>
 @endforeach
