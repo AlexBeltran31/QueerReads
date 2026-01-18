@@ -6,25 +6,57 @@
     <p>{{ $book->description }}</p>
 
     @auth
-    <form method="POST" action="{{ route('userbooks.store', $book) }}">
+    <form method="POST" action="{{ route('userbooks.store', $book) }}" class="mt-4">
         @csrf
+        <input type="hidden" name="book_id" value="{{ $book->id }}">
 
-        <label>Status:</label>
-        <select name="status">
-            <option value="">Select status</option>
-            <option value="to_read">Want to read</option>
-            <option value="reading">Reading</option>
-            <option value="finished">Read</option>
-        </select>
+        <div class="mb-2">
+            <label for="status" class="block font-semibold">Status:</label>
+            <select name="status" id="statusSelect" required class="border p-2 w-full">
+                <option value="">Select status</option>
+                <option value="to_read">Want to read</option>
+                <option value="reading">Reading</option>
+                <option value="finished">Read</option>
+            </select>
+        </div>
 
-        <label>Rating (1-5):</label>
-        <input type="number" name="rating" min="1" max="5">
+        <div id="reviewSection" class="hidden">
+            <div class="mb-2">
+                <label for="review" class="block font-semibold">Review:</label>
+                <textarea name="review" id="review" class="border p-2 w-full" placeholder="Write your review..."></textarea>
+            </div>
 
-        <label>Review:</label>
-        <textarea name="review"></textarea>
+            <div class="mb-2">
+                <label for="rating" class="block font-semibold">Rating:</label>
+                <select name="rating" id="rating" class="border p-2 w-full">
+                    <option value="">Select rating</option>
+                    <option value="1">★</option>
+                    <option value="2">★★</option>
+                    <option value="3">★★★</option>
+                    <option value="4">★★★★</option>
+                    <option value="5">★★★★★</option>
+                </select>
+            </div>
+        </div>
 
-        <button type="submit">Save</button>
+        <button type="submit" class="bg-green-500 text-white px-3 py-1 rounded mt-2">
+            Add to My List
+        </button>
     </form>
+    <script>
+        const statusSelect = document.getElementById('statusSelect');
+        const reviewSection = document.getElementById('reviewSection');
+
+        statusSelect.addEventListener('change', function() {
+            if (this.value === 'finished') {
+                reviewSection.classList.remove('hidden');
+            } else {
+                reviewSection.classList.add('hidden');
+                document.getElementById('review').value == '';
+                document.getElementById('rating').value == '';
+            }
+        });
+    </script>
     @endauth
 
     <h3>Reviews:</h3>
