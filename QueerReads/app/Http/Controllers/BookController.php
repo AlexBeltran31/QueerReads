@@ -8,8 +8,15 @@ use App\Models\Category;
 
 class BookController extends Controller
 {
-    public function index() {
-        $books = Book::with('category')->get();
+    public function index(Request $request) {
+        $query = Book::with('category');
+
+        if ($request->filled('search')){
+            $query->where(function ($q) use ($request) {
+                $q->where('title', 'like', '%' . $request->search . '%')->orWhere('author','like','%' . $request->search . '%');
+            });
+        }
+        $books = $query->get();
         return view('books.index', compact('books'));
     }
     public function create() {

@@ -15,8 +15,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
+        @include('layouts.partials.header')
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
 
             <!-- Page Heading -->
             @isset($header)
@@ -32,5 +32,13 @@
                 {{ $slot }}
             </main>
         </div>
+
+        <script>
+            function toggleCategories() {
+                const dropdown = document.getElementById('categoriesDropdown');
+                dropdown.style.display =
+                    dropdown.style.display === 'block' ? 'none' : 'block';
+            }
+        </script>
     </body>
 </html>
