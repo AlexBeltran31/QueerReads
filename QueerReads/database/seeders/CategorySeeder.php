@@ -14,15 +14,19 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            'Queer Fiction',
+            'Lesbian Fiction',
+            'Gay Fiction',
+            'Queer Autobiography',
             'LGBTQ+ History',
             'Trans Studies',
-            'Feminist Theory',
             'Queer Poetry'
         ];
 
-        foreach ($categories as $name) {
-            Category::create(['name' => $name]);
+        foreach ($categories as $category) {
+            Category::updateOrCreate(
+                ['name' => $category],
+                ['name' => $category]
+            );
         }
     }
 }
