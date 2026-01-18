@@ -8,8 +8,11 @@ use App\Models\User;
 class UserController extends Controller
 {
     public function show(User $user) {
-        $user->load('userBooks.book');
+        $userBooks = $user->books()
+            ->with('category')
+            ->get()
+            ->groupBy('pivot.status');
 
-        return view('users.show', compact('user'));
+        return view('users.show', compact('user', 'userBooks'));
     }
 }

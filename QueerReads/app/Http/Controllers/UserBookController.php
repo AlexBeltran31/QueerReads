@@ -12,7 +12,7 @@ class UserBookController extends Controller
     public function store(Request $request, Book $book) {
         $data = $request->validate([
             'rating' => 'nullable|integer|min:1|max:5',
-            'reviews' => 'nullable|string|max:1000',
+            'review' => 'nullable|string|max:1000',
             'status' => 'nullable|string|in:reading,finished,to_read'
         ]);
 
