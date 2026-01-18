@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserBookController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,3 +28,5 @@ Route::get('/books/{book}', [BookController::class, 'show'])->name('books.show')
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
+
+Route::middleware('auth')->post('/books/{book}/list', [UserBookController::class, 'store'])->name('userbooks.store');
