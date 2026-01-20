@@ -2,7 +2,13 @@
     <section class="relative bg-black min-h-screen pt-1 pb-5">
         <div class="relative mx-w-5xl mx-auto bg-white rounded-3xl shadow-xl px-10 py-10">
 
-            <h1 class="text-2x1 font-semibold mb-1">{{ $user->name }}'s Profile</h1>
+            <h1 class="text-4xl font-semibold mb-1 text-pink-500">✨ {{ $user->name }}'s Profile ✨</h1>
+
+            @if($user->pronouns)
+                <p class="text-2xl text-zinc-500 mt-1">
+                    Pronouns: {{ $user->pronouns }}
+                </p>
+            @endif
 
             <p class="text-sm text-zinc-500 mb-8">
                 Joined: {{ $user->created_at->format('M d, Y') }}

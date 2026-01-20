@@ -36,7 +36,7 @@
                             <label class="block text-sm font-medium mb-1">
                                 Status
                             </label>
-                            <select name="status">
+                            <select name="status"
                                     id="statusSelect"
                                     required
                                     class="w-full rounded-xl border-zinc-300 focus:ring-pink-500 focus:border-pink-500">
@@ -83,7 +83,7 @@
                             Add to My List
                         </button>
                     </form>
-                @endauth
+            @endauth
 
                 <div class="border-t pt-8">
                     <h2 class="text-xl font-semibold mb-6">
@@ -119,7 +119,7 @@
             const statusSelect = document.getElementById('statusSelect');
             const reviewSection = document.getElementById('reviewSection');
 
-            statusSelect?.addEventListener('change', function() {
+            statusSelect.addEventListener('change', function() {
                 if (this.value === 'finished') {
                     reviewSection.classList.remove('hidden');
                 } else {

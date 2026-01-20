@@ -13,8 +13,8 @@
         <div class="relative mx-x-5xl mx-auto bg-white rounded-3xl shadow-xl px-10 py-10">
 
             <div class="flex justify-between items-center mb-8">
-                <h1 class="text-2x1 font-semibold text-zinc-900">
-                    Books
+                <h1 class="text-2xl font-semibold text-zinc-900">
+                    ✨ Books ✨
                 </h1>
                 @auth
                     <a href="{{ route('books.create') }}"
