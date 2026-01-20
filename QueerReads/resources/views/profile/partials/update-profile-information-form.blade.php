@@ -46,6 +46,11 @@
                 </div>
             @endif
         </div>
+        <div>
+            <x-input-label for="pronouns" :value="__('Pronouns')" />
+            <x-text-input id="pronouns" name="pronouns" type="text" class="mt-1 block w-full" :value="old('pronouns', $user->pronouns)" required autofocus autocomplete="pronouns" />
+            <x-input-error class="mt-2" :messages="$errors->get('pronouns')" />
+        </div>
 
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
