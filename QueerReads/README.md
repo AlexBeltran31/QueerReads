@@ -1,59 +1,135 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+✨QueerReads✨
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+QueerReads is a web application developed with Laravel that aims to facilitate the discovery, organization, and discussion of Queer literatures.
+The platfowm allows users to manage books, organize them into categories, create personal reading lists, and share reviews in a clean, inclusive and user-friendly enviroment.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+🌈 Project Motivation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Finding Queer literature can often be challenging due to poor categorization and lack of visibility in traditional platforms. ✨QueerReads✨ was designed to address this problem by providing:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-A curated space for queer books
+-Personalized reading lists
+-Inclusive user profiles (including pronouns)
+-A simple and easy to understand user interface
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+📚 Main Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    ⭐ User Authentication
+        -User registration and login (Laravel Breeze)
+        -Profile editing
+        -Account deletion
+        -Optional pronouns field
 
-## Laravel Sponsors
+    ⭐ Books Management (CRUD)
+        -Create, read, update and delete books
+        -Each book belongs to a category
+        -Books include:
+            -Title
+            -Author
+            -Publication year
+            -Description
+            -Category
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    ⭐ Categories
+        -Categories to classify books (fiction, autobiography, history, etc)
+        -Filter books by category
 
-### Premium Partners
+    ⭐ Personal Reading List
+    Each user can add boooks to their personal list with a reading status:
+        -'to_read'
+        -'reading'
+        -'finished'
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+    ⭐ Reviews & Ratings
+        -Reviews and ratings can only be added when a book is marked as finished
+        -Ratings are on a 1-5 scale
+        -Reviews are visible on the book detail page
 
-## Contributing
+    ⭐ Search
+        -Search books by title or author
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+🧱 Database Design (MER)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+The database is designed following a relational model:
+    -Main Entities
+        **User**
+        **Book**
+        **Category**
+        **UserBook** (pivot table for personal reading lists)
 
-## Security Vulnerabilities
+    -Relationships
+        **User** can have many Books through UserBook
+        **Book** belongs to one Category
+        **Book** can appear in many Users' reaging lists
+        **UserBook** table stores:
+            -reading status
+            -rating
+            -review
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+🛠 Technologies Used
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Laravel 12
+- PHP 8
+- MySQL
+- Laravel Breeze (authentication)
+- Blade (templating)
+- Tailwind CSS (styling)
+- Git & GitHub (version control)
+
+---
+
+🎨 UI & UX (User Interface & User Experience)
+
+-Minalist and modern design
+-Dark background with floating white cards
+-Consistent layout across all views
+-Accessible and inclusive design choices
+-Responsive layout using Tailwind CSS
+
+---
+
+🔀 Git Workflow
+
+The project follows a GitFlow-inspired workflow:
+
+-'main': final, stable version (delivered)
+-'develop': integration branch
+-'feature/*': individual features (UI, auth, books, etc)
+
+All changes were developed in feature branches, merged into 'develop', and finally merged into 'main'.
+
+---
+
+🚀 Installation & Setup
+
+### Requirements
+- PHP 8+
+- Composer
+- MySQL
+- Node.js & npm
+
+### Steps
+```bash
+git clone https://github.com/AlexBeltran31/QueerReads.git
+cd QueerReads
+composer install
+npm install
+npm run dev
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan serve
+
+
+
+💜 Author
+Developed by Alex Beltrán
+Academic project – Web Development with Laravel
