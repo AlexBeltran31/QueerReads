@@ -121,11 +121,12 @@ All changes were developed in feature branches, merged into 'develop', and final
 git clone https://github.com/AlexBeltran31/QueerReads.git
 cd QueerReads
 composer install
-npm install
-npm run dev
 cp .env.example .env
 php artisan key:generate
+touch database/database.sqlite
 php artisan migrate --seed
+npm install
+npm run dev
 php artisan serve
 
 
