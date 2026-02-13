@@ -128,6 +128,7 @@ php artisan migrate --seed
 npm install
 npm run dev
 php artisan serve
+php artisan key:generate --force
 
 
 
