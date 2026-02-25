@@ -8,8 +8,12 @@ use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
-    public function run(): void
-    {
+    public function run(): void {
+        $this->call([
+            CategorySeeder::class,
+            BookSeeder::class,
+        ]);
+        
         User::firstOrCreate(
             ['email' => 'admin@queerreads.com'],
             [
