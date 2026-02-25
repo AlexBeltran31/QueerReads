@@ -130,6 +130,11 @@ npm run dev
 php artisan serve
 php artisan key:generate --force
 
+## Usuario de prueba
+
+Email: admin@queerreads.com
+Password: password
+
 
 
 💜 Author
