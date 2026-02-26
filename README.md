@@ -1,6 +1,7 @@
 ✨QueerReads✨
 
 QueerReads is a web application developed with Laravel that aims to facilitate the discovery, organization, and discussion of Queer literatures.
+
 The platfowm allows users to manage books, organize them into categories, create personal reading lists, and share reviews in a clean, inclusive and user-friendly enviroment.
 
 ---
@@ -10,8 +11,11 @@ The platfowm allows users to manage books, organize them into categories, create
 Finding Queer literature can often be challenging due to poor categorization and lack of visibility in traditional platforms. ✨QueerReads✨ was designed to address this problem by providing:
 
 -A curated space for queer books
+
 -Personalized reading lists
+
 -Inclusive user profiles (including pronouns)
+
 -A simple and easy to understand user interface
 
 ---
@@ -89,9 +93,13 @@ The database is designed following a relational model:
 🎨 UI & UX (User Interface & User Experience)
 
 -Minalist and modern design
+
 -Dark background with floating white cards
+
 -Consistent layout across all views
+
 -Accessible and inclusive design choices
+
 -Responsive layout using Tailwind CSS
 
 ---
@@ -101,7 +109,9 @@ The database is designed following a relational model:
 The project follows a GitFlow-inspired workflow:
 
 -'main': final, stable version (delivered)
+
 -'develop': integration branch
+
 -'feature/*': individual features (UI, auth, books, etc)
 
 All changes were developed in feature branches, merged into 'develop', and finally merged into 'main'.
@@ -117,6 +127,7 @@ All changes were developed in feature branches, merged into 'develop', and final
 - Node.js & npm
 
 ### Steps
+
 ```bash
 git clone https://github.com/AlexBeltran31/QueerReads.git
 cd QueerReads

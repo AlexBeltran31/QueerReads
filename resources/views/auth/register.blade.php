@@ -21,6 +21,18 @@
 
                 <div>
                     <label class="block text-sm font-medium mb-1">
+                        Pronouns (e.g. she/her, he/him, they/them)
+                    </label>
+                    <input type="text"
+                        name="pronouns"
+                        pattern="^[a-zA-Z]+\/[a-zA-Z]+$"
+                        title="Pronouns must be in format like he/him"
+                        required
+                        class="w-full rounded-xl border-zinc-300 focus:ring-pink-500 focus:border-pink-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">
                         Email
                     </label>
                     <input type="email"
